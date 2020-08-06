@@ -1,1 +1,1 @@
-docker build -t hwengmgr/vertcoinbuild .
+docker build -t vertcoinbuild .
