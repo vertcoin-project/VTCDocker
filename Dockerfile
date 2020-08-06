@@ -12,5 +12,7 @@ RUN apt-get -y install libdb4.8-dev libdb4.8++-dev
 RUN mkdir -p proj && cd proj
 RUN update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
 RUN update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix
+RUN apt-get -y install cmake libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python3-pip imagemagick
 COPY build-linux-only.sh /
 COPY build-win-only.sh /
+COPY build-osx-only.sh /

@@ -16,7 +16,7 @@ rm -rf build
 rm -rf /root/output/$HOST
 mv $WORKSPACE/out/$HOST /root/output/$HOST
 
-zip -j /root/output/vertcoind-linux-x64.zip /root/output/$HOST/bin/vertcoind /root/output/$HOST/bin/vertcoin-tx /root/output/$HOST/bin/vertcoin-cli
+zip -j /root/output/vertcoind-linux-x64.zip /root/output/$HOST/bin/vertcoind /root/output/$HOST/bin/vertcoin-tx /root/output/$HOST/bin/vertcoin-cli /root/output/$HOST/bin/vertcoin-wallet
 zip -j /root/output/vertcoinqt-linux-x64.zip /root/output/$HOST/bin/vertcoin-qt
 
 
