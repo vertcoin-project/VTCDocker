@@ -17,5 +17,10 @@ rm -rf build
 rm -rf /root/output/$HOST
 mv $WORKSPACE/out/$HOST /root/output/$HOST
 
-zip -j /root/output/vertcoind-windows-x64.zip /root/output/$HOST/bin/vertcoind.exe /root/output/$HOST/bin/vertcoin-tx.exe /root/output/$HOST/bin/vertcoin-cli.exe /root/output/$HOST/bin/vertcoin-wallet.exe
-zip -j /root/output/vertcoinqt-windows-x64.zip /root/output/$HOST/bin/vertcoin-qt.exe
+QT_BINS=("/root/output/$HOST/bin/vertcoin-qt.exe")
+DAEMON_BINS=("/root/output/$HOST/bin/vertcoind.exe" "/root/output/$HOST/bin/vertcoin-tx.exe" "/root/output/$HOST/bin/vertcoin-cli.exe" "/root/output/$HOST/bin/vertcoin-wallet.exe")
+
+strip --strip-unneeded "${QT_BINS[@]}" "${DAEMON_BINS[@]}"
+zip -j /root/output/vertcoind-windows-x64.zip "${DAEMON_BINS[@]}"
+zip -j /root/output/vertcoinqt-windows-x64.zip "${QT_BINS[@]}"
+
