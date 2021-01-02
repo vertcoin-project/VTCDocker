@@ -4,7 +4,7 @@ cd /root/vertcoin
 export WORKSPACE=`pwd`
 rm -rf build
 
-export HOST=arm-linux-gnueabihf NO_QT=1
+export HOST=arm-linux-gnueabihf
 make -j8 -C depends HOST=$HOST
 mkdir -p $WORKSPACE/out/$HOST
 ./autogen.sh
@@ -17,3 +17,5 @@ rm -rf /root/output/$HOST
 mv $WORKSPACE/out/$HOST /root/output/$HOST
 
 zip -j /root/output/vertcoind-arm-linux-gnueabihf.zip /root/output/$HOST/bin/vertcoind /root/output/$HOST/bin/vertcoin-tx /root/output/$HOST/bin/vertcoin-cli /root/output/$HOST/bin/vertcoin-wallet
+
+zip -j /root/output/vertcoinqt-arm-linux-gnueabihf.zip /root/output/$HOST/bin/vertcoin-qt

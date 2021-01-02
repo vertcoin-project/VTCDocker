@@ -4,7 +4,7 @@ cd /root/vertcoin
 export WORKSPACE=`pwd`
 rm -rf build
 
-export HOST=aarch64-linux-gnu NO_QT=1
+export HOST=aarch64-linux-gnu
 make -j8 -C depends HOST=$HOST
 mkdir -p $WORKSPACE/out/$HOST
 ./autogen.sh
@@ -16,4 +16,6 @@ rm -rf build
 rm -rf /root/output/$HOST
 mv $WORKSPACE/out/$HOST /root/output/$HOST
 
-zip /root/output/vertcoind-aarch64-linux-gnu.zip /root/output/$HOST/bin/vertcoind.exe /root/output/HOST/bin/vertcoin-tx.exe /root/output/$HOST/bin/vertcoin-cli.exe
+zip -j /root/output/vertcoind-aarch64-linux-gnu.zip /root/output/$HOST/bin/vertcoind.exe /root/output/HOST/bin/vertcoin-tx.exe /root/output/$HOST/bin/vertcoin-cli.exe
+
+zip -j /root/output/vertcoinqt-aarch64-linux-gnu.zip /root/output/$HOST/bin/vertcoin-qt
