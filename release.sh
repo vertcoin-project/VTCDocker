@@ -8,6 +8,12 @@ echo Starting Arm build
 docker run --detach --name vertcoin-build-arm -v $PWD/../vertcoin-core-release:/root/vertcoin -v $PWD/output:/root/output vertcoinbuild ./build-arm-only.sh
 
 
+docker rm vertcoin-build-aarch
+
+echo Starting aarch build
+docker run --detach --name vertcoin-build-aarch -v $PWD/../vertcoin-core-release:/root/vertcoin -v $PWD/output:/root/output vertcoinbuild ./build-aarch-only.sh
+
+
 #docker rm vertcoin-build-linux
 
 #echo Starting Linux build
