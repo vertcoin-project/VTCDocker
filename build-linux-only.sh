@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /root/vertcoin
+make distclean
 export WORKSPACE=`pwd`
 rm -rf build
 

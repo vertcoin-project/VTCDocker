@@ -16,3 +16,6 @@ RUN apt-get -y install cmake libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff
 COPY build-linux-only.sh /
 COPY build-win-only.sh /
 COPY build-osx-only.sh /
+COPY build-arm-only.sh /
+COPY build-aarch-only.sh /
+COPY build-all.sh /
