@@ -1,11 +1,25 @@
-Dockerfile for Vertcoinbuild
+# VTCDocker
+## Dockerfiles for building Vertcoin-Core
 
-This Dockerfile uses Ubuntu 18.04 and adds the necessary installs to build Vertcoin. It should also work to build Bitcoin, as the requirements are almost identical.
+### Functioning builds
+- [x] **arm-linux-gnueabihf**
+- [x] **aarch64-linux-gnu**
+- [x] **riscv64-linux-gnu**
+- [x] **x86_64-w64-mingw32**
+- [x] **x86_64-pc-linux-gnu**
+- [x] **x86_64-apple-darwin16**
 
-Please note that this works fine on Docker on Linux. I had it fail with compiler problems on Docker for Windows, but that may simply be a problem with the type of container. More work to be done.
+```
+git clone https://github.com/vertcoin-project/vertcoin-core.git vertcoin-core-release && cd vertcoin-core-release
+git checkout 0.18.x
+cd ..
+git clone https://github.com/vertcoin-project/VTCDocker.git && cd VTCDocker
+./dockerBuild.sh
+sudo ./release.sh
+```
+By default, all builds will be compiled.  You may specify a specific build by editing the `release.sh` file.  Every time you edit a build file, you must re-run `dockerBuild.sh` before `release.sh`
 
-It has also not been tested using WSL.
-
-The two script files provided build the Windows and Linux versions.
-
-Docker on Windows Note: successful builds require more than the default 2G of memory. I tried 3.5G and that worked. not sure exactly where the threshold is but definitely up the memory allcoated by Docker. This applies to both Docker under windows and Docker under WSL.
+View Docker container log:
+```
+docker container log -f CONTAINER_ID
+```

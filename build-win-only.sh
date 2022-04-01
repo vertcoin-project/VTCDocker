@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd /root/vertcoin
-make distclean
 export WORKSPACE=`pwd`
 rm -rf build
 
@@ -23,4 +22,3 @@ DAEMON_BINS=("/root/output/$HOST/bin/vertcoind.exe" "/root/output/$HOST/bin/vert
 strip --strip-unneeded "${QT_BINS[@]}" "${DAEMON_BINS[@]}"
 zip -j /root/output/vertcoind-windows-x64.zip "${DAEMON_BINS[@]}"
 zip -j /root/output/vertcoinqt-windows-x64.zip "${QT_BINS[@]}"
-
