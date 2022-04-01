@@ -5,3 +5,4 @@
 ./build-win-only.sh
 ./build-linux-only.sh
 ./build-osx-only.sh
+./build-riscv64-only.sh

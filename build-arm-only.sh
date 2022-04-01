@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd /root/vertcoin
-make distclean
 export WORKSPACE=`pwd`
 rm -rf build
 
@@ -17,6 +16,9 @@ rm -rf build
 rm -rf /root/output/$HOST
 mv $WORKSPACE/out/$HOST /root/output/$HOST
 
-zip -j /root/output/vertcoind-arm-linux-gnueabihf.zip /root/output/$HOST/bin/vertcoind /root/output/$HOST/bin/vertcoin-tx /root/output/$HOST/bin/vertcoin-cli /root/output/$HOST/bin/vertcoin-wallet
+QT_BINS=("/root/output/$HOST/bin/vertcoin-qt")
+DAEMON_BINS=("/root/output/$HOST/bin/vertcoind" "/root/output/$HOST/bin/vertcoin-tx" "/root/output/$HOST/bin/vertcoin-cli" "/root/output/$HOST/bin/vertcoin-wallet")
 
-zip -j /root/output/vertcoinqt-arm-linux-gnueabihf.zip /root/output/$HOST/bin/vertcoin-qt
+strip --strip-unneeded "${QT_BINS[@]}" "${DAEMON_BINS[@]}"
+zip -j /root/output/vertcoind-arm-linux-gnueabihf.zip "${DAEMON_BINS[@]}"
+zip -j /root/output/vertcoinqt-arm-linux-gnueabihf.zip "${QT_BINS[@]}"

@@ -4,7 +4,7 @@ cd /root/vertcoin
 export WORKSPACE=`pwd`
 rm -rf build
 
-export HOST=aarch64-linux-gnu
+export HOST=riscv64-linux-gnu
 make -j8 -C depends HOST=$HOST
 mkdir -p $WORKSPACE/out/$HOST
 ./autogen.sh
@@ -20,5 +20,5 @@ QT_BINS=("/root/output/$HOST/bin/vertcoin-qt")
 DAEMON_BINS=("/root/output/$HOST/bin/vertcoind" "/root/output/$HOST/bin/vertcoin-tx" "/root/output/$HOST/bin/vertcoin-cli" "/root/output/$HOST/bin/vertcoin-wallet")
 
 strip --strip-unneeded "${QT_BINS[@]}" "${DAEMON_BINS[@]}"
-zip -j /root/output/vertcoind-aarch64.zip "${DAEMON_BINS[@]}"
-zip -j /root/output/vertcoinqt-aarch64.zip "${QT_BINS[@]}"
+zip -j /root/output/vertcoind-riscv64.zip "${DAEMON_BINS[@]}"
+zip -j /root/output/vertcoinqt-riscv64.zip "${QT_BINS[@]}"

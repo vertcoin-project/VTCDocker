@@ -1,11 +1,10 @@
 #!/bin/bash
 
 cd /root/vertcoin
-make distclean
 export WORKSPACE=`pwd`
 rm -rf build
 
-export HOST=x86_64-unknown-linux-gnu
+export HOST=x86_64-pc-linux-gnu
 make -j8 -C depends HOST=$HOST
 mkdir -p $WORKSPACE/out/$HOST
 ./autogen.sh
@@ -23,4 +22,3 @@ DAEMON_BINS=("/root/output/$HOST/bin/vertcoind" "/root/output/$HOST/bin/vertcoin
 strip --strip-unneeded "${QT_BINS[@]}" "${DAEMON_BINS[@]}"
 zip -j /root/output/vertcoind-linux-x64.zip "${DAEMON_BINS[@]}"
 zip -j /root/output/vertcoinqt-linux-x64.zip "${QT_BINS[@]}"
-
