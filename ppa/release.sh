@@ -1,4 +1,10 @@
 #!/bin/bash
+rm .bash_history
+rm .wget-hsts
+rm -r .cache*
+rm -r .gnupg
+rm -r .local
+docker stop focal-vtc
 docker rm focal-vtc
 
 echo 'Starting build'

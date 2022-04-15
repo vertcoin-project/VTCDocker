@@ -4,7 +4,7 @@ RUN apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
 RUN apt-get -y install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
-RUN apt-get -y install ntp make g++ gcc autoconf cpp ngrep iftop sysstat
+RUN apt-get -y install ntp make g++ gcc autoconf cpp ngrep iftop sysstat nano
 RUN apt-get -y install git wget gnupg dput dh-make dh-exec devscripts bash-completion lintian lcov html2text debhelper
 RUN apt-get -y install libboost-chrono-dev libboost-filesystem-dev libboost-system-dev libboost-test-dev libboost-thread-dev
 RUN apt-get -y install libevent-dev libprotobuf-dev libssl-dev protobuf-compiler
