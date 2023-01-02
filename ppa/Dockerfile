@@ -12,7 +12,7 @@ RUN apt-get -y install libzmq3-dev libsqlite3-dev libqrencode-dev libminiupnpc-d
 RUN apt-get -y install qt5-qmake qtbase5-dev qttools5-dev-tools
 RUN apt-get -y install libdb5.3 libdb5.3-dev libdb5.3++-dev
 
-ENV VERSION=0.18.0
-ENV DEBFULLNAME="vertion"
+ENV VERSION=22.1
+ENV DEBFULLNAME="vertiond"
 ENV DEBEMAIL="vertion@protonmail.com"
-ENV RELEASE_VERSION=focal11
+ENV RELEASE_VERSION=jammy1

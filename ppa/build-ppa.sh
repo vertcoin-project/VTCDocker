@@ -2,9 +2,9 @@
 
 rm -rf build
 mkdir build && cd build
-wget https://raw.githubusercontent.com/vertcoin-project/guix.sigs/main/${VERSION}/vertion/all.SHA256SUMS
-wget https://github.com/vertcoin-project/vertcoin-core/releases/download/${VERSION}/vertcoin-${VERSION}.tar.gz
-sha256sum --ignore-missing --check all.SHA256SUMS
+wget https://github.com/vertcoin-project/vertcoin-core/releases/download/v${VERSION}/SHA256SUMS
+wget https://github.com/vertcoin-project/vertcoin-core/releases/download/v${VERSION}/vertcoin-${VERSION}.tar.gz
+sha256sum --ignore-missing --check SHA256SUMS
 mv vertcoin-${VERSION}.tar.gz vertcoin_${VERSION}-0~${RELEASE_VERSION}.orig.tar.gz
 tar -xvf vertcoin_${VERSION}-0~${RELEASE_VERSION}.orig.tar.gz
 
