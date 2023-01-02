@@ -6,12 +6,12 @@
 - [x] **aarch64-linux-gnu**
 - [x] **riscv64-linux-gnu**
 - [x] **x86_64-w64-mingw32**
-- [x] **x86_64-pc-linux-gnu**
-- [x] **x86_64-apple-darwin16**
+- [x] **x86_64-linux-gnu**
+- [x] **x86_64-apple-darwin18**
 
 ```
 git clone https://github.com/vertcoin-project/vertcoin-core.git vertcoin-core-release && cd vertcoin-core-release
-git checkout 0.18.x
+git checkout 22.x
 cd ..
 git clone https://github.com/vertcoin-project/VTCDocker.git && cd VTCDocker
 ./dockerBuild.sh
