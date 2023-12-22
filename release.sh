@@ -5,4 +5,4 @@ mkdir output
 docker rm vertcoin-build
 
 echo Starting build
-docker run --detach --name vertcoin-build -v $PWD/../vertcoin-core-release:/root/vertcoin -v $PWD/output:/root/output vertcoinbuild ./build-all.sh
+docker run --name vertcoin-build -v $PWD/../vertcoin-core-release:/root/vertcoin -v $PWD/output:/root/output vertcoinbuild ./build-linux-only.sh

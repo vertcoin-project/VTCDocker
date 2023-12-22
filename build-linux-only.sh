@@ -8,6 +8,7 @@ export HOST=x86_64-linux-gnu
 make -j8 -C depends HOST=$HOST
 ./autogen.sh
 mkdir build && cd build
+export CXX=g++-8
 ../configure --disable-dependency-tracking --disable-tests --disable-bench --enable-glibc-back-compat --prefix=$WORKSPACE/depends/$HOST --enable-reduce-exports
 make -j8
 rm -rf /root/output/$HOST

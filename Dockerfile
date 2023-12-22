@@ -14,6 +14,7 @@ RUN mkdir -p proj && cd proj
 RUN update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
 RUN apt-get -y install librsvg2-bin libtiff-tools bsdmainutils imagemagick libz-dev python3-setuptools libtinfo5 xorriso
 RUN apt-get -y install libevent-dev libgmp-dev bison
+RUN apt-get -y install g++-8
 COPY build-linux-only.sh /
 COPY build-win-only.sh /
 COPY build-osx-only.sh /
